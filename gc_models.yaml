@@ -1,0 +1,243 @@
+components:
+-   name: IEM
+    type: SkyModel
+    spectral:
+        type: PowerLawNormSpectralModel
+        parameters:
+        -   name: norm
+            value: 1.0
+        -   name: tilt
+            value: 0.0
+            frozen: true
+        -   name: reference
+            value: 1.0
+            unit: TeV
+            frozen: true
+    spatial:
+        type: TemplateSpatialModel
+        frame: galactic
+        parameters: []
+        filename: cube_iem.fits.gz
+        normalize: false
+        unit: 1 / (cm2 MeV s sr)
+-   name: Fermi bubbles
+    type: SkyModel
+    spectral:
+        type: LogParabolaSpectralModel
+        parameters:
+        -   name: amplitude
+            value: 5.0e-10
+            unit: cm-2 MeV-1 s-1
+        -   name: reference
+            value: 1000.0
+            unit: MeV
+            frozen: true
+        -   name: alpha
+            value: 1.6
+        -   name: beta
+            value: 0.09
+    spatial:
+        type: TemplateSpatialModel
+        frame: galactic
+        parameters: []
+        filename: map_fermi_bubbles.fits.gz
+        normalize: true
+        unit: 1 / sr
+-   name: SNR G0.9+0.1
+    type: SkyModel
+    spectral:
+        type: PowerLaw2SpectralModel
+        parameters:
+        -   name: amplitude
+            value: 5.6999999338558396e-12
+            unit: cm-2 s-1
+        -   name: index
+            value: 2.40000009536743
+        -   name: emin
+            value: 200000.00298023198
+            unit: MeV
+            frozen: true
+        -   name: emax
+            value: 100000000000.0
+            unit: MeV
+            frozen: true
+    spatial:
+        type: PointSpatialModel
+        frame: icrs
+        parameters:
+        -   name: lon_0
+            value: 266.825006428334
+            unit: deg
+            frozen: true
+        -   name: lat_0
+            value: -28.1499961795314
+            unit: deg
+            min: .nan
+            max: .nan
+            frozen: true
+-   name: HESS J1745-303
+    type: SkyModel
+    spectral:
+        type: PowerLawSpectralModel
+        parameters:
+        -   name: index
+            value: 2.71000003814697
+        -   name: amplitude
+            value: 2.8399999366102202e-18
+            unit: cm-2 MeV-1 s-1
+        -   name: reference
+            value: 1000000.0
+            unit: MeV
+            frozen: true
+    spatial:
+        type: GaussianSpatialModel
+        frame: icrs
+        parameters:
+        -   name: lon_0
+            value: 266.29699978676
+            unit: deg
+            frozen: true
+        -   name: lat_0
+            value: -30.1990059065777
+            unit: deg
+            min: .nan
+            max: .nan
+            frozen: true
+        -   name: sigma
+            value: 0.200000002980232
+            unit: deg
+            min: 0.0002778
+        -   name: e
+            value: 0.0
+            frozen: true
+        -   name: phi
+            value: 0.0
+            unit: deg
+            frozen: true
+-   name: HESS J1746-308
+    type: SkyModel
+    spectral:
+        type: PowerLawSpectralModel
+        parameters:
+        -   name: index
+            value: 3.27
+        -   name: amplitude
+            value: 7.21e-18
+            unit: cm-2 MeV-1 s-1
+        -   name: reference
+            value: 1000000.0
+            unit: MeV
+            frozen: true
+    spatial:
+        type: GaussianSpatialModel
+        frame: icrs
+        parameters:
+        -   name: lon_0
+            value: 266.57
+            unit: deg
+            frozen: true
+        -   name: lat_0
+            value: -30.84
+            unit: deg
+            min: .nan
+            max: .nan
+            frozen: true
+        -   name: sigma
+            value: 0.162
+            unit: deg
+            min: 0.0002778
+        -   name: e
+            value: 0.0
+            frozen: true
+        -   name: phi
+            value: 0.0
+            unit: deg
+            frozen: true
+-   name: GC
+    type: SkyModel
+    spectral:
+        type: ExpCutoffPowerLawSpectralModel
+        parameters:
+        -   name: index
+            value: 2.14000010490417
+        -   name: amplitude
+            value: 254.999992475857e-20
+            unit: cm-2 s-1 TeV-1
+        -   name: reference
+            value: 1.0
+            unit: TeV
+            frozen: true
+        -   name: lambda_
+            value: 0.09345794559118617
+            unit: TeV-1
+        -   name: alpha
+            value: 1.0
+            frozen: true
+    spatial:
+        type: PointSpatialModel
+        frame: icrs
+        parameters:
+        -   name: lon_0
+            value: 266.416830613989
+            unit: deg
+            frozen: true
+        -   name: lat_0
+            value: -29.0078149622511
+            unit: deg
+            min: .nan
+            max: .nan
+            frozen: true
+-   name: HESS J1741-302
+    type: SkyModel
+    spectral:
+        type: PowerLaw2SpectralModel
+        parameters:
+        -   name: amplitude
+            value: 162.0e-21
+            unit: cm-2 s-1
+        -   name: index
+            value: 2.3
+        -   name: emin
+            value: 10000
+            unit: MeV
+            frozen: true
+        -   name: emax
+            value: 1000000000.0
+            unit: MeV
+            frozen: true
+    spatial:
+        type: PointSpatialModel
+        frame: icrs
+        parameters:
+        -   name: lon_0
+            value: 266.825006428334
+            unit: deg
+            frozen: true
+        -   name: lat_0
+            value: -28.1499961795314
+            unit: deg
+            min: .nan
+            max: .nan
+            frozen: true
+-   name: DM_GC
+    type: SkyModel
+    spectral:
+        type: PowerLawNormSpectralModel
+        parameters:
+        -   name: norm
+            value: 1.0
+        -   name: tilt
+            value: 0.0
+            frozen: true
+        -   name: reference
+            value: 1.0
+            unit: TeV
+            frozen: true
+    spatial:
+        type: TemplateSpatialModel
+        frame: galactic
+        parameters: []
+        filename: cube_dm_gc.fits.gz
+        normalize: false
+        unit: 1 / (cm2 MeV s sr)
+            
